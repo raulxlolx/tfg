@@ -10,7 +10,7 @@
 <body>
     
 <header>
-<button class="sidebar-toggle">Toggle Sidebar</button>
+<button class="sidebar-toggle">Toggle Sidbar</button>
       <h1>Gestion Taller Dynos</h1>
 
       <button class="button"><a href="Nuevo.html">Nuevo deposito</a></button>
