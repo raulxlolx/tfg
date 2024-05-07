@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.button{
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color:#004e8e ;
+   margin-left: 30px;
+   color: white;
+   border-color: transparent;
+    margin-top: 20px;
+}       
+.button a{
+    text-decoration: none;
+    color: white;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.container-wrapper {
+    display: flex;
+}
+
+.container {
+    background-color: blue;
+    flex: 1; /* El contenedor ocupará el espacio restante */
+}
+
+.asidebar {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: left;
+    width: 200px; /* Ancho fijo de la barra lateral */
+    transition: width 0.5s ease; /* Agrega esta línea */
+}
+
+.asidebar-hidden {
+    width: 10px; /* Cambia esta línea */
+}
+
+.asidebar nav {
+    padding: 10px;
+}
+
+.asidebar-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.asidebar-li {
+    padding: 10px;
+}
+
+.icon {
+    
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+    
+}

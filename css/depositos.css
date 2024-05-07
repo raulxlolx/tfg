@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.container-wrapper {
+    display: flex;
+}
+
+.container {
+   
+    flex: 1; /* El contenedor ocupará el espacio restante */
+}
+
+.asidebar {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: left;
+    width: 200px; /* Ancho fijo de la barra lateral */
+}
+
+.asidebar nav {
+    padding: 10px;
+}
+
+.asidebar-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.asidebar-li {
+    padding: 10px;
+}body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.container-wrapper {
+    display: flex;
+}
+
+.container {
+   
+    flex: 1; /* El contenedor ocupará el espacio restante */
+}
+
+.asidebar {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: left;
+    width: 200px; /* Ancho fijo de la barra lateral */
+    transition: width 0.5s ease; /* Agrega esta línea */
+}
+
+.asidebar-hidden {
+    width: 10px; /* Cambia esta línea */
+}
+
+.asidebar nav {
+    padding: 10px;
+}
+
+.asidebar-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.asidebar-li {
+    padding: 10px;
+}
+
+/* estilo de los formularios */
+
+.form {
+    padding: 20px;
+    margin: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    
+}
+
+.bloquenombre{
+    display: flex;
+}
+.bloquefecha{
+    display: flex;
+}
+.bloquenif{
+    display: flex;
+}
+.bloquedireccion{
+    display: flex;
+}
+.bloqueestado{
+    display: flex;
+}
+
+.form label {
+   
+    margin: 10px 25px;
+    display: block;
+}
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="tel"],
+.form input[type="date"]
+.form input[type="textarea"]
+{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form input[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form select {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+}
+.bloquebotones {
+    display: flex;
+   
+    justify-content: center;
+    margin-top: 20px;
+}
+.botones {
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color:#2196f3 ;
+   margin-left: 30px;
+   color: white;
+   border-color: transparent;
+    margin-top: 20px;
+}
+.albaran {
+    font-family: Arial, sans-serif;
+}
+
+.albaran table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.albaran th {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.albaran td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.albaran input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.albaran input[name="num_serie"],
+.albaran input[name="precio"],
+.albaran input[name="precio_iva"],
+.albaran input[name="cantidad"],
+.albaran input[name="importe"] {
+    width: 80%; /* Ajusta según sea necesario */
+}
+
+.albaran label {
+    margin: 10px 0;
+    display: block;
+    font-weight: bold;
+}
+
+.albaran div {
+    margin-bottom: 20px;
+}
+.albaran input[name="total"],
+.albaran input[name="iva"],
+.albaran input[name="base_imponible"]{
+    width: 20%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    float: right;
+}
+.label[for="total"],
+.label[for="iva"],
+.label[for="base_imponible"]{
+    float: right;
+    margin-right: 20px;
+}
+    .albaran input[readonly] {
+        background-color: #ddd; /* Ajusta el color según sea necesario */
+    }

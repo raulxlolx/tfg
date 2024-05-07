@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <link rel="stylesheet" href="css/depositos.css">
+</head>
+
+<body>
+
+    <header>
+        <button class="sidebar-toggle">Toggle Sidebar</button>
+        <h1>Gestion Taller Dynos</h1>
+    </header>
+
+
+    <h1>DepositoNº</h1>
+    <div class="container-wrapper">
+        <div class="asidebar">
+            <nav>
+                <ul class="asidebar-menu">
+                    <li class="asidebar-li"><img class="icon" src="images/depositoicon.png" alt=""><a
+                            href="index.php">Deposito</a></li>
+                    <li class="asidebar-li"><a href="clientes.php">informes</a></li>
+                    <li class="asidebar-li"><a href="vehiculos.php">Opciones</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="container">
+            <!-- aqui van los formularios -->
+
+
+            <form action="" method="POST" class="form">
+                <h2>Datos del Cliente</h2>
+                <div class="bloquenombre">
+
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+
+
+                    <label for="email">Correo:</label>
+                    <input type="email" id="email" name="email" required>
+
+
+                    <label for="phone">Telefono:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="bloquenif">
+                    <label for="dni">NIF/CIF:</label>
+                    <input type="text" id="dni" name="dni" required>
+
+                    <label for="dni">Poblacion:</label>
+                    <input type="text" id="dni" name="dni" required>
+                </div>
+                <div class="bloquedireccion">
+                    <label for="Direccion">Direccion:</label>
+                    <input type="text" id="Direccion" name="Direccion" required>
+
+                    <label for="Codigo Postal">Codigo Postal:</label>
+                    <input type="tel" id="CodigoP" name="CodigoP" required>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+            <hr>
+
+            <form action="" class="form">
+                <h2>Estado del Deposito</h2>
+                <div class="bloqueestado">
+
+                    <label for="estado">Estado:</label>
+                    <select name="estado" id="estado">
+                        <option value="1">Pendiente de revisar</option>
+                        <option value="2">En revision o reparacion</option>
+                        <option value="3">Terminado, pendiente de recogida</option>
+                        <option value="4">Pendiente piezas</option>
+                        <option value="5">En servicio externo</option>
+                        <option value="6">Pendiente aceptacion presupuesto</option>
+                        <option value="7">Pendiente RMA</option>
+                        <option value="8">Abonado</option>
+                        <option value="9">Entregado</option>
+
+                    </select>
+
+                    <label for="Resultado">Resultado reparacion</label>
+                    <select name="Resultado" id="Resultado">
+                        <option value="1"> No decidido</option>
+                        <option value="2"> Diagnosticado,sin solucion </option>
+                        <option value="3"> Solucionado</option>
+                        <option value="4">Diagnosticado, Presupuesto no aceptado </option>
+                    </select>
+                </div>
+                <div class="bloquefecha">
+                    <label for="fecha">Fecha de entrada:</label>
+                    <input type="text" id="fecha" name="fecha" readonly>
+                    <label for="fehaR">Fecha de Retirada</label>
+                    <input type="text" id="fechaR" name="fechaR" readonly>
+
+                </div>
+            </form>
+            <div class="bloquebotones">
+                <button class="botones" onclick="TerminadoSolu()">Terminado + Solucíon</button>
+                <button class="botones" onclick="TerminadoNoSolu()">Terminado + Sin Solucíon</button>
+                <button class="botones" onclick="Retirar()">Retirar Ahora</button>
+            </div>
+
+
+            <hr>
+            <h2>Datos Del Deposito</h2>
+            <form action="" class="form">
+                <div class="bloquedatos">
+                    <label for="DatosDeposita">Datos que deposita</label>
+                    <textarea name="DatosDeposita" id="DatosDeposita" style="width: 100%;" rows="3"></textarea>
+                    <label for="Problemas">Problemas a resolver</label>
+                    <textarea name="Problemas" id="Problemas" style="width: 100%;" rows="3"></textarea>
+                    <label for="Solucion">Solucion</label>
+                    <textarea name="Solucion" id="Solucion" style="width: 100%;" rows="3"></textarea>
+                </div>
+            </form>
+            <h2>Informacion adicional</h2>
+            <form action="" class="form">
+                <div class="bloquenombre">
+                    <label for="Empleado">Empleado</label>
+                    <select name="Empleado" id="Empleado">
+                        <option value="1">MARIPAZ</option>
+                        <option value="2">PEDRO(GAY)</option>
+                        <option value="3">ROSA</option>
+                        <option value="3">LOBATO</option>
+                    </select>
+                    <label for="Contraseña">Contraseña S.O</label>
+                    <input type="text" id="Contraseña" name="Contraseña">
+                    <label for="Prioridad">Prioridad</label>
+
+                    <select name="Prioridad" id="Prioridad">
+                        <option value="1">Baja</option>
+                        <option value="2">Media</option>
+                        <option value="3">Alta</option>
+
+                    </select>
+                </div>
+                <label for="Nserie">Nº Serie</label>
+                <input type="text" form="Nserie"> </input>
+                <div class="bloquenombre">
+                    <label for="Albaran">Albaran</label>
+                    <input type="text" id="Albaran" name="Albaran">
+                    <label for="Presupuesto">Presupuesto</label>
+                    <input type="text" id="Presupuesto" name="Presupuesto">
+                    <label for="Adelantado">Adelantado</label>
+                    <input type="text" id="Adelantado" name="Adelantado">
+                </div>
+            </form>
+
+      
+        <h2>Albaran</h2>
+        <!-- ... el resto de tu código HTML ... -->
+
+            <form action="" class="albaran">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Número de Serie</th>
+                            <th>Precio</th>
+                            <th>Precio + IVA</th>
+                            <th>Cantidad</th>
+                            <th>Importe</th>
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="descripcion"></td>
+                            <td><input type="text" name="num_serie"></td>
+                            <td><input type="text" name="precio"></td>
+                            <td><input type="text" name="precio_iva"></td>
+                            <td><input type="text" name="cantidad"></td>
+                            <td><input type="text" name="importe" readonly></td>
+                        
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="descripcion"></td>
+                            <td><input type="text" name="num_serie"></td>
+                            <td><input type="text" name="precio"></td>
+                            <td><input type="text" name="precio_iva"></td>
+                            <td><input type="text" name="cantidad"></td>
+                            <td><input type="text" name="importe" readonly></td>
+                        
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="descripcion"></td>
+                            <td><input type="text" name="num_serie"></td>
+                            <td><input type="text" name="precio"></td>
+                            <td><input type="text" name="precio_iva"></td>
+                            <td><input type="text" name="cantidad"></td>
+                            <td><input type="text" name="importe" readonly></td>
+                        
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="descripcion"></td>
+                            <td><input type="text" name="num_serie"></td>
+                            <td><input type="text" name="precio"></td>
+                            <td><input type="text" name="precio_iva"></td>
+                            <td><input type="text" name="cantidad"></td>
+                            <td><input type="text" name="importe" readonly></td>
+                        
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div>
+                    <label for="base_imponible">Base Imponible:</label>
+                    <input type="text" id="base_imponible" name="base_imponible" readonly>
+                </div>
+
+                <div>
+                    <label for="iva">IVA (21%):</label>
+                    <input type="text" id="iva" name="iva" readonly>
+                </div>
+
+                <div>
+                    <label for="total">Total:</label>
+                    <input type="text" id="total" name="total" readonly>
+                </div>
+            </form>
+    </div>
+    </div>
+
+    <!-- ... el resto de tu código HTML ... -->
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const sidebarToggle = document.querySelector('.sidebar-toggle');
+            const asidebar = document.querySelector('.asidebar');
+
+            sidebarToggle.addEventListener('click', () => {
+                asidebar.classList.toggle('asidebar-hidden');
+            });
+
+
+        });
+        function TerminadoSolu() {
+
+            //poner estado en terminado pendiente de recojida y el estado en olucionado
+
+            var estado = document.getElementById("estado");
+            estado.value = 3;//coresponde a terminado pendiente de recojida
+
+            var resultado = document.getElementById("Resultado");
+            resultado.value = 3;//corresponde a diagnosticado
+
+            ponerfecha();
+
+        }
+        function TerminadoNoSolu() {
+            //poner estado en terminado pendiente de recojida y el estado en olucionado
+
+            var estado = document.getElementById("estado");
+            estado.value = 3;//coresponde a terminado pendiente de recojida
+
+            var resultado = document.getElementById("Resultado");
+            resultado.value = 2;//corresponde a diagnosticado
+
+            ponerfecha();
+        }
+        function ponerfecha() {
+            var fecha = new Date();
+            var dia = fecha.getDate();
+            var mes = fecha.getMonth() + 1; // Add 1 to get the correct month
+            var año = fecha.getFullYear();
+            var hora = fecha.getHours();
+            var minutos = fecha.getMinutes();
+            var fechaactual = año + "-" + mes + "-" + dia + " " + hora + ":" + minutos;
+            var Ifecha = document.getElementById("fechaR");
+            Ifecha.value = fechaactual; // Use value instead of InnerHtml to set the input field value
+        }
+    </script>
+
+</body>
+
+</html>

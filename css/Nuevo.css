@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.container-wrapper {
+    display: flex;
+}
+
+.container {
+   
+    flex: 1; /* El contenedor ocupará el espacio restante */
+}
+
+.asidebar {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: left;
+    width: 200px; /* Ancho fijo de la barra lateral */
+}
+
+.asidebar nav {
+    padding: 10px;
+}
+
+.asidebar-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.asidebar-li {
+    padding: 10px;
+}body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.container-wrapper {
+    display: flex;
+}
+
+.container {
+   
+    flex: 1; /* El contenedor ocupará el espacio restante */
+}
+
+.asidebar {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: left;
+    width: 200px; /* Ancho fijo de la barra lateral */
+    transition: width 0.5s ease; /* Agrega esta línea */
+}
+
+.asidebar-hidden {
+    width: 10px; /* Cambia esta línea */
+}
+
+.asidebar nav {
+    padding: 10px;
+}
+
+.asidebar-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.asidebar-li {
+    padding: 10px;
+}
+
+/* estilo de los formularios */
+
+.form {
+    padding: 20px;
+    margin: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    width: 50%;
+    
+}
+
+.bloquenombre{
+    display: flex;
+}
+.bloquenombre label{
+    height: 20px;
+}
+.bloquefecha{
+    display: flex;
+}
+.bloquenif{
+    display: flex;
+}
+.bloquedireccion{
+    display: flex;
+}
+.bloqueestado{
+    display: flex;
+}
+
+.form label {
+   
+    margin: 10px 25px;
+    display: block;
+}
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="tel"],
+.form input[type="date"]
+.form input[type="textarea"]
+{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form input[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form select {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+}
+.bloquebotones {
+    display: flex;
+   
+    justify-content: center;
+    margin-top: 20px;
+}
+.button {
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color:#2196f3 ;
+   margin-left: 30px;
+   color: white;
+   border-color: transparent;
+    margin-top: 20px;
+}
+.codigobarras{
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.codigobarras h2{
+   
+    margin-top: 20px;
+   
+
+}

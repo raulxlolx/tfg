@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo deposito</title>
+
+    <script src="https://cdn.jsdelivr.net/jsbarcode/3.3.20/JsBarcode.all.min.js"></script>
+<script src="barcode.js"></script>
+    <link rel="stylesheet" href="css/Nuevo.css">
+</head>
+<body>
+    
+<header>
+<button class="sidebar-toggle">Toggle Sidebar</button>
+      <h1>Gestion Taller Dynos</h1>
+</header>
+
+
+<h1>DepositoNº</h1>
+<div class="container-wrapper">
+<div class="asidebar">
+    <nav>
+        <ul class="asidebar-menu">
+             <li class="asidebar-li"><img class="icon" src="images/depositoicon.png" alt=""><a href="index.php">Deposito</a></li>
+            <li  class="asidebar-li"><a href="clientes.php">informes</a></li>
+            <li  class="asidebar-li"><a href="vehiculos.php">Opciones</a></li>
+      
+        </ul>
+    </nav>
+</div>
+<div class="container">
+   <!-- aqui van los formularios -->
+
+
+    <form action="" method="POST" class="form">
+        <h2>Nuevo Deposito</h2>
+       
+            
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" onkeypress="nombre()" required>
+         
+        <div class="bloquenombre">
+        <label for="email">Correo:</label>
+        <input type="email" id="email" name="email" >
+        
+       
+        <label for="phone">Telefono:</label>
+        <input type="tel" id="phone" name="phone" required>
+        </div>  
+   
+    <input type="hidden" id="fecha" name="fecha">
+
+    </form>
+    <hr>
+
+    <form action="" class="form">
+        <h2>Problemas</h2>
+       <label for="Objeto">Objeto que deposita</label>
+      
+        <textarea name="Objeto" id="Objeto" style="width: 100%;" rows="3"></textarea>
+    </form>      
+        <button class="button" onclick="deposito(this.innerHTML)">PORTATIL</button>
+        <button class="button" onclick="deposito(this.innerHTML)">TORRE</button>
+        <button class="button" onclick="deposito(this.innerHTML)">MOVIL</button>
+        <button class="button" onclick="deposito(this.innerHTML)">IMPRESORA</button>
+        <button class="button" onclick="deposito(this.innerHTML)">MONITOR</button>
+        <button class="button" onclick="deposito(this.innerHTML)">CONSOLA</button>
+        <button class="button" onclick="deposito(this.innerHTML)">DISCO DURO</button>
+
+       
+
+       
+       
+
+    <hr>
+    <h2>Problema a resolver</h2>
+    <form action="" class="form">
+        <label for="Problema">Problema</label>
+        <textarea name="Problema" id="Problema" style="width: 100%;" rows="3"></textarea>
+    </form>
+    <form action="" class="form">
+        <div class="bloquenombre">
+        <label for="Empleado">Empleado</label>
+        <select name="Empleado" id="Empleado">
+            <option value="1">MARIPAZ</option>
+            <option value="2">PEDRO(GAY)</option>
+            <option value="3">ROSA</option>
+            <option value="3">LOBATO</option>
+        </select>        
+        <label for="Contraseña">Contraseña S.O</label>
+        <input type="text" id="Contraseña" name="Contraseña" >
+        <label for="Prioridad">Prioridad</label>
+
+        <select name="Prioridad" id="Prioridad">
+            <option value="1">Baja</option>
+            <option value="2">Media</option>
+            <option value="3">Alta</option> 
+
+        </select>
+    </div>
+        <label for="Nserie">Nº Serie</label>
+        <input type="text" form="Nserie">   </input>
+        <div class="bloquenombre">
+            <label for="Albaran">Albaran</label>
+            <input type="text" id="Albaran" name="Albaran">
+            <label for="Presupuesto">Presupuesto</label>
+            <input type="text" id="Presupuesto" name="Presupuesto">
+            <label for="Adelantado">Adelantado</label>
+            <input type="text" id="Adelantado" name="Adelantado">
+        </div>
+    </form>
+    <div class="codigobarras">
+        <h2 id="nombre_cliente"></h2>
+        <svg id="barcode"></svg>
+
+    </div>
+    <button class="button">Crear Resguardo</button>
+
+  
+
+</div>
+</div>
+<script>
+   document.addEventListener('DOMContentLoaded', (event) => {
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const asidebar = document.querySelector('.asidebar');
+
+    sidebarToggle.addEventListener('click', () => {
+        asidebar.classList.toggle('asidebar-hidden');
+    });
+    
+    var fecha= new Date();
+    var dia=fecha.getDate();
+    var mes=fecha.getMonth()+1; // Add 1 to get the correct month
+    var año=fecha.getFullYear();
+    var hora=fecha.getHours();
+    var minutos=fecha.getMinutes();
+    var fechaactual=año+"-"+mes+"-"+dia+" "+hora+":"+minutos;
+    var Ifecha=document.getElementById("fecha");
+    Ifecha.value=fechaactual; // Use value instead of InnerHtml to set the input field value
+});
+  
+
+</script>
+<script src="script/nuevo.js"></script>
+<script src="script/barcode.js"></script>
+
+</body>
+</html>
+
+
