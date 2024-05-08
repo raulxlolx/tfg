@@ -1,5 +1,4 @@
-
-        window.addEventListener('load', function() {
+   window.addEventListener('load', function() {
             // Obtener la fecha actual
             var fecha = new Date();
             var año = fecha.getFullYear();
