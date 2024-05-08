@@ -34,10 +34,10 @@
    <!-- aqui van los formularios -->
 
 
-    <form action="" method="POST" class="form" id="myForm">
+    
         <h2>Nuevo Deposito</h2>
        
-            
+            <form action="" class="form" id="myForm">
         <label for="name">Nombre:</label>
         <input type="text" id="name" name="name" onkeypress="nombre()" required>
          
@@ -52,23 +52,22 @@
    
     <input type="hidden" id="fecha" name="fecha">
 
-    </form>
+  
     <hr>
 
-    <form action="" class="form">
+    
         <h2>Problemas</h2>
        <label for="Objeto">Objeto que deposita</label>
       
         <textarea name="Objeto" id="Objeto" style="width: 100%;" rows="3"></textarea>
-    </form>      
-        <button class="button" onclick="deposito(this.innerHTML)">PORTATIL</button>
-        <button class="button" onclick="deposito(this.innerHTML)">TORRE</button>
-        <button class="button" onclick="deposito(this.innerHTML)">MOVIL</button>
-        <button class="button" onclick="deposito(this.innerHTML)">IMPRESORA</button>
-        <button class="button" onclick="deposito(this.innerHTML)">MONITOR</button>
-        <button class="button" onclick="deposito(this.innerHTML)">CONSOLA</button>
-        <button class="button" onclick="deposito(this.innerHTML)">DISCO DURO</button>
-
+    
+        <button type="button" class="button" onclick="deposito(this.innerHTML)">PORTATIL</button>
+        <button type="button" class="button" onclick="deposito(this.innerHTML)">TORRE</button>
+        <button type="button" class="button" onclick="deposito(this.innerHTML)">MOVIL</button>
+        <button type="button" class="button" onclick="deposito(this.innerHTML)">IMPRESORA</button>
+        <button type="button" class="button" onclick="deposito(this.innerHTML)">MONITOR</button>
+        <button type="button" class="button" onclick="deposito(this.innerHTML)">CONSOLA</button>
+        <button type="button" class="button" onclick="deposito(this.innerHTML)">DISCO DURO</button>
        
 
        
@@ -76,16 +75,16 @@
 
     <hr>
     <h2>Problema a resolver</h2>
-    <form action="" class="form">
+    
         <label for="Problema">Problema</label>
         <textarea name="Problema" id="Problema" style="width: 100%;" rows="3"></textarea>
-    </form>
-    <form action="" class="form">
+   
+  
         <div class="bloquenombre">
         <label for="Empleado">Empleado</label>
         <select name="Empleado" id="Empleado">
             <option value="1">MARIPAZ</option>
-            <option value="2">PEDRO(GAY)</option>
+            <option value="2">PEDRO</option>
             <option value="3">ROSA</option>
             <option value="3">LOBATO</option>
         </select>        
@@ -101,7 +100,7 @@
         </select>
     </div>
         <label for="Nserie">Nº Serie</label>
-        <input type="text" form="Nserie">   </input>
+        <input type="text" name="Nserie">   </input>
         <div class="bloquenombre">
             <label for="Albaran">Albaran</label>
             <input type="text" id="Albaran" name="Albaran">
@@ -110,12 +109,14 @@
             <label for="Adelantado">Adelantado</label>
             <input type="text" id="Adelantado" name="Adelantado">
         </div>
-    </form>
+    
     <div class="codigobarras">
         <h2 id="nombre_cliente"></h2>
         <svg id="barcode"></svg>
+        <input type="hidden" id="codigo_barras" name="codigo_barras" >
 
     </div>
+</form>
     <button class="button" onclick="enviarDatos()">Crear Resguardo</button>
 
   

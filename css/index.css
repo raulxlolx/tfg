@@ -27,7 +27,7 @@ header {
 }
 
 .container {
-    background-color: blue;
+    
     flex: 1; /* El contenedor ocupará el espacio restante */
 }
 

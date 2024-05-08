@@ -22,13 +22,8 @@
             JsBarcode("#barcode", codigo, options);
 
             // Función para imprimir el código de barras
-            function imprimir() {
-                printJS({
-                    printable: 'barcodeContainer',
-                    type: 'html',
-                    css: 'https://printjs-4de6.kxcdn.com/print.min.css'
-                });
-            }
+            var codigobarras=document.getElementById("codigo_barras");
+            codigobarras.value = codigo;
         });
     function nombre(){
         var nombre = document.getElementById("name").value;
