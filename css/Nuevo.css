@@ -130,6 +130,7 @@ header {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .form input[type="submit"] {
@@ -164,6 +165,7 @@ header {
    color: white;
    border-color: transparent;
     margin-top: 20px;
+    cursor: pointer;
 }
 .codigobarras{
     align-items: center;
