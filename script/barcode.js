@@ -25,8 +25,4 @@
             var codigobarras=document.getElementById("codigo_barras");
             codigobarras.value = codigo;
         });
-    function nombre(){
-        var nombre = document.getElementById("name").value;
-        document.getElementById("nombre_cliente").innerHTML = nombre;
-    }
  

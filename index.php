@@ -34,14 +34,16 @@
       
         require 'Bd/conn.php';
 
-        $sql = "SELECT id, nombre FROM clientes";
+        $sql = "SELECT clientes.id, clientes.nombre, depositos.fecha_entrada, depositos.datos_deposita, depositos.estado 
+                FROM clientes 
+                INNER JOIN depositos ON clientes.id = depositos.id_cliente";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-            echo "<table><tr><th>ID</th><th>Nombre</th></tr>";
+            echo "<table><tr><th>ID</th><th>Nombre</th><th>Fecha de entrada</th><th>Objeto depositado</th><th>Estado de la reparación</th></tr>";
             // output data of each row
             while($row = $result->fetch_assoc()) {
-                echo "<tr><td>" . $row["id"]. "</td><td>" . $row["nombre"]. "</td></tr>";
+                echo "<tr><td>" . $row["id"]. "</td><td>" . $row["nombre"]. "</td><td>" . $row["fecha_entrada"]. "</td><td>" . $row["datos_deposita"]. "</td><td>" . $row["estado"]. "</td></tr>";
             }
             echo "</table>";
         } else {

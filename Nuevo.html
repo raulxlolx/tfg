@@ -8,6 +8,7 @@
 
     <script src="https://cdn.jsdelivr.net/jsbarcode/3.3.20/JsBarcode.all.min.js"></script>
 <script src="barcode.js"></script>
+
     <link rel="stylesheet" href="css/Nuevo.css">
 </head>
 <body>
@@ -18,7 +19,6 @@
 </header>
 
 
-<h1>DepositoNº</h1>
 <div class="container-wrapper">
 <div class="asidebar">
     <nav>
@@ -38,8 +38,13 @@
         <h2>Nuevo Deposito</h2>
        
             <form action="" class="form" id="myForm">
+                
         <label for="name">Nombre:</label>
         <input type="text" id="name" name="name" onkeypress="nombre()" required>
+
+        <div id="resultado">
+            
+        </div>
          
         <div class="bloquenombre">
         <label for="email">Correo:</label>
@@ -50,7 +55,7 @@
         <input type="tel" id="phone" name="phone" required>
         </div>  
    
-    <input type="hidden" id="fecha" name="fecha">
+        <input type="hidden" id="fecha" name="fecha">
 
   
     <hr>
@@ -132,9 +137,9 @@
     var minutos=fecha.getMinutes();
     var fechaactual=año+"-"+mes+"-"+dia+" "+hora+":"+minutos;
     var Ifecha=document.getElementById("fecha");
-    Ifecha.value=fechaactual; // Use value instead of InnerHtml to set the input field value
+    Ifecha.value=fechaactual;
 });
-  
+
 
 </script>
 <script src="script/nuevo.js"></script>

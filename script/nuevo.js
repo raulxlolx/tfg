@@ -9,11 +9,6 @@ function  deposito(nombre)
 function enviarDatos( ){
     var form = document.getElementById("myForm");
     var formData = new FormData(form);
-    
-   
-
-   
-
     fetch('Bd/nuevo.php', {
         method: 'POST',
         body: formData
@@ -30,6 +25,7 @@ function enviarDatos( ){
     .catch(error => {
         console.error('Error:', error);
     });
+    window.location.href = 'index.php';
 }
 function deposito(producto, marca) {
     var contenedor = document.getElementById('botones');
@@ -87,3 +83,78 @@ window.onload = function() {
         contenedor.appendChild(boton);
     });
 };
+function nombre2(){
+    var nombre = document.getElementById("name").value;
+    document.getElementById("nombre_cliente").innerHTML = nombre;
+    
+    // Enviar el nombre a través de PHP
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("Nombre enviado correctamente");
+            $("#resultado").html(this.responseText);
+        }
+    };
+    xhttp.open("POST", "Bd/search.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("nombre=" + nombre);
+
+    recogerdatos();
+  
+}
+
+function nombre() {
+    var nombre = document.getElementById("name").value;
+    document.getElementById("nombre_cliente").innerHTML = nombre;
+
+    // Enviar el nombre a través de fetch
+    fetch("Bd/search.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "nombre=" + nombre
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Hubo un problema al enviar el nombre.");
+        }
+        console.log("Nombre enviado correctamente");
+        return response.text();
+    })
+    .then(data => {
+        resultado.innerHTML=data;
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+
+   
+}
+
+
+function seleccionarCliente(id) {
+    fetch("Bd/getCliente.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "id=" + id
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Hubo un problema al obtener el cliente.");
+        }
+        return response.json();
+    })
+    .then(data => {
+        var cliente = data;
+        console.log(data);
+         name.value = cliente.nombre;
+        email.value = cliente.email;
+        phone.value = cliente.telefono;
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+}
