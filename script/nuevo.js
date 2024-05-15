@@ -83,27 +83,9 @@ window.onload = function() {
         contenedor.appendChild(boton);
     });
 };
-function nombre2(){
-    var nombre = document.getElementById("name").value;
-    document.getElementById("nombre_cliente").innerHTML = nombre;
-    
-    // Enviar el nombre a través de PHP
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log("Nombre enviado correctamente");
-            $("#resultado").html(this.responseText);
-        }
-    };
-    xhttp.open("POST", "Bd/search.php", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("nombre=" + nombre);
 
-    recogerdatos();
-  
-}
 
-function nombre() {
+function nombre(nombre) {
     var nombre = document.getElementById("name").value;
     document.getElementById("nombre_cliente").innerHTML = nombre;
 
@@ -150,9 +132,11 @@ function seleccionarCliente(id) {
     .then(data => {
         var cliente = data;
         console.log(data);
+        var name = document.getElementById("name");
          name.value = cliente.nombre;
         email.value = cliente.email;
         phone.value = cliente.telefono;
+        nombre(cliente.nombre);
     })
     .catch(error => {
         console.error("Error:", error);

@@ -9,13 +9,28 @@ header {
     padding: 10px;
     text-align: center;
 }
-
+.deposito{
+    margin-left: 8%;
+}
 .container-wrapper {
     display: flex;
 }
+.button {
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color:#2196f3 ;
+   margin-left: 30px;
+   color: white;
+   border-color: transparent;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #0b7dda;
+}
 
 .container {
-   
+   margin-left: 8%;
     flex: 1; /* El contenedor ocupará el espacio restante */
 }
 

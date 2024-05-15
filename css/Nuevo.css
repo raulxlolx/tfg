@@ -54,7 +54,7 @@ header {
 }
 
 .container {
-   
+    margin-left: 8%;
     flex: 1; /* El contenedor ocupará el espacio restante */
 }
 

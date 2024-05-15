@@ -10,28 +10,54 @@
 <script src="barcode.js"></script>
 
     <link rel="stylesheet" href="css/Nuevo.css">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
     
 <header>
-<button class="sidebar-toggle">Toggle Sidebar</button>
+
       <h1>Gestion Taller Dynos</h1>
 </header>
 
 
-<div class="container-wrapper">
-<div class="asidebar">
-    <nav>
-        <ul class="asidebar-menu">
-             <li class="asidebar-li"><img class="icon" src="images/depositoicon.png" alt=""><a href="index.php">Deposito</a></li>
-            <li  class="asidebar-li"><a href="clientes.php">informes</a></li>
-            <li  class="asidebar-li"><a href="vehiculos.php">Opciones</a></li>
-      
-        </ul>
-    </nav>
-</div>
+
+<div class="area">
+
+</div><nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="index.php">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                           Depositos
+                        </span>
+                    </a>
+                  
+                </li>
+                <li class="has-subnav">
+                    <a href="grafica.html">
+                        <i class="fa fa-globe fa-2x"></i>
+                        <span class="nav-text">
+                            Informes
+                        </span>
+                    </a>
+                    
+                </li>
+                
+                <li>
+                   <a href="opciones.html">
+                       <i class="fa fa-cogs fa-2x"></i>
+                        <span class="nav-text">
+                           Ajustes
+                        </span>
+                    </a>
+                </li>
+               
+        </nav>
+
+        
 <div class="container">
-   <!-- aqui van los formularios -->
+  
 
 
     
@@ -40,7 +66,7 @@
             <form action="" class="form" id="myForm">
                 
         <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" onkeypress="nombre()" required>
+        <input type="text" id="name" name="name" onkeyup="nombre()" required>
 
         <div id="resultado">
             
@@ -121,13 +147,7 @@
 </div>
 </div>
 <script>
-   document.addEventListener('DOMContentLoaded', (event) => {
-    const sidebarToggle = document.querySelector('.sidebar-toggle');
-    const asidebar = document.querySelector('.asidebar');
-
-    sidebarToggle.addEventListener('click', () => {
-        asidebar.classList.toggle('asidebar-hidden');
-    });
+document.addEventListener("DOMContentLoaded", function() {
     
     var fecha= new Date();
     var dia=fecha.getDate();

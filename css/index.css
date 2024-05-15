@@ -29,6 +29,7 @@ header {
 .container {
     
     flex: 1; /* El contenedor ocupará el espacio restante */
+    margin-left: 2%;
 }
 
 .asidebar {
@@ -70,6 +71,7 @@ header {
         width: 100%;
         border-collapse: collapse;
         margin: 20px 0;
+        margin-left: 5%;
     }
     th, td {
         border: 1px solid #ddd;
