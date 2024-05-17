@@ -73,3 +73,9 @@
           
         window.location.href = "index.php";
     }
+
+function mandarimprimir(){
+
+    var url = "imprimir.html?id=" + encodeURIComponent(id) + "&codigoDeBarras=" + encodeURIComponent(codbarras);
+    window.open(url);
+}

@@ -1,181 +1,87 @@
-
-
-
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>-</title>
-        <link rel="shortcut icon" type="image/png" href="/assets/static/images/logo.png"/>
-   
-    <body class="app">  
-        <div class="container-fluid">
-            <body>
-                <link rel="stylesheet" type="text/css" href="css/estilo.css?v=2022052317"/>
-                <link rel="stylesheet" href="css/imprimir.css">
-                <div class="no-print text-center">
-                    <br/>
-                    <a href="editar.php?id=148" class="btn btn-primary btn-sm">
-                        <i class="fa fa-arrow-left"></i>
-                        Volver
-                    </a>
-                    <a href="?informe=1&id=148" class="btn btn-primary btn-sm">
-                        <i class="fa fa-file-text-o"></i>
-                        Mostrar informe
-                    </a>
-                    <a href="#" class="btn btn-primary btn-sm" onClick="window.print();">
-                        <i class="fa fa-print"></i>
-                        Imprimir
-                    </a>
-                    <a href="/notificar/?movil=620509901&nombre=ADOLFO FERNANDEZ&resultado=3&pago_adelantado=0.00&presupuesto=314,18&objetos=TORRE+CL%C3%93NICA%0D%0A%2B+4+MODULO+MEMORIAS" class="btn btn-primary btn-sm">
-                        <i class="fa fa-mobile"></i>
-                        Notificar SMS/WhatsApp
-                    </a>
-                    <a href="#" class="btn btn-secondary btn-sm" onClick="imprime_etiquetas();">
-                        <i class="fa fa-print"></i>
-                        Etiquetas APLI 1283
-                    </a>
-                    <a href="#" class="btn btn-secondary btn-sm" onClick="imprime_etiquetas_62mm();">
-                        <i class="fa fa-print"></i>
-                        Etiquetas 62mm
-                    </a>
-                    <a href="/firmador/?id_deposito=148" class="btn btn-secondary btn-sm">
-                        <i class="fa fa-pencil"></i>
-                        Firmar digitalmente
-                    </a>
-                    <a href="imprimir.php?pdf=1&resguardo=1&tipo=resguardo&id=148" class="btn btn-secondary btn-sm">
-                        <i class="fa fa-file-pdf-o"></i>
-                        Generar PDF
-                    </a>
-                    <a href="/seguimiento/nuevo.php?id_deposito=148" class="btn btn-secondary btn-sm">
-                        <i class="fa fa-calendar-o"></i>
-                        Crear ticket de seguimiento
-                    </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>-</title>
+    <link rel="stylesheet" href="css/imprimir.css">
+</head>
+<body>
+    <div id="pagina">
+        <button  class="button" onclick="window.print()">Imprimir</button>
+        <div id="cabecera" class="header-row">
+            <div id="logo_tienda" class="header-col">
+                <img src="images/logotipo-dynos modificado.jpg" height="128">
+            </div>
+            <div id="datos_tienda" class="header-col">
+                <div id="borde">
+                   
+                        APV INFORMATICA UTRERA S.L.U (B90437393)<br/>
+                        C/ ALVAREZ QUINTERO, 1 LOCAL 3<br/>
+                        UTRERA - SEVILLA<br/>95 586 10 16
+                    
                 </div>
-                <div id="pagina">
-                    <div id="cabecera">
-                        <div class="row">
-                            <div id="logo_tienda" class="col-6 text-center">
-                                <img src="../comun/images/users/szd_utrera_6673.png" height="128">
-                            </div>
-                            <div class="col-6 text-center">
-                                <div id="borde">
-                                    <b>
-                                        APV INFORMATICA UTRERA S.L.U (B90437393)<br/>
-                                        C/ ALVAREZ QUINTERO, 1 LOCAL 3<br/>
-                                        UTRERA - SEVILLA<br/>95 586 10 16
-                                    </b>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="titulo">RESGUARDO DE DEPÓSITO</div>
-                    <div id="datoscliente">
-                        <table width="100%">
-                            <tr>
-                                <td width="15%">
-                                <td width="40%">
-                                <td width="17%">
-                                <td width="28%">
-                                    <tr>
-                                        <td>
-                                            <b>F. RECEPCIÓN</b>
-                                        <td>05/10/2021
-                                        <td>
-                                            <b>Nº DEPÓSITO</b>
-                                        <td>
-                                            R148
-                                            <tr>
-                                                <td colspan="4">
-                                                    <hr>
-                                                    <tr>
-                                                        <td>
-                                                            <b>NOMBRE</b>
-                                                        <td>ADOLFO FERNANDEZ
-                                                        <td>
-                                                            <b>CONTACTO</b>
-                                                        <td>
-                                                            <i class="fa fa-phone"></i>
-                                                            620509901
-                        </table>
-                    </div>
-                    <hr>
-                    <div id="objetos">
-                        <b>Productos depositados:</b>
-                        <blockquote>
-                            TORRE CLÓNICA<br/>
-                            + 4 MODULO MEMORIAS<br/>Contraseña: dementira33
-                        </blockquote>
-                        <br>
-                    </div>
-                    <hr>
-                    <div id="problema">
-                        <b>Anomalías observadas o trabajos a realizar</b>
-                        <blockquote>
-                            DA FALLOS AL INICIAR ALEATORIAMENTE<br/>
-                            <br/>
-                        </blockquote>
-                        <br>
-                    </div>
-                    <hr>
-                    <div id="solución">
-                        <b>Diagnósticos o trabajos realizados</b>
-                        <blockquote>SUSTITUCION PLACA, MICRO, FUENTE Y MEMORIA RAM</blockquote>
-                        <br>
-                    </div>
-                    <div id="abajo">
-                        <hr>
-                        <table width="100%">
-                            <tr>
-                                <td width="%50" colspan=2>
-                                    <b>No está en garantía.  </b>
-                                    &nbsp;
-                                <td width="25%">
-                                    <b>Fecha de entrega máxima</b>
-                                <td width="25%" contenteditable>05/11/2021
-                        </table>
-                        <form name="form">
-                            <input type="hidden" name="total" value="">
-                        </form>
-                        <hr>
-                        <div id="firmas">
-                            <b>El depositante acepta las condiciones de este depósito, detalladas en el pie de página.</b>
-                            <br/>
-                            <table border=2 bordercolor=black height="120px" width="100%" cellspacing=0 style="border-collapse:collapse; margin-top: 4px; padding-top:0px;">
-                                <tr valign="top">
-                                    <td width="33%">
-                                        Firma cliente<br/>
-                                        <td width="33%">
-                                            Firma técnico<br/>
-                                            <td width="33%">
-                                                Retira conforme. Firma cliente<br/>
-                                </tr>
-                            </table>
-                        </div>
-                        <div id="piedepagina">
-                            TODA REPARACION INFERIOR A 30€ SE REALIZARA SIN AVISO AL CLIENTE. TODOS LOS EQUIPOS APPLE CON REPARACION INFERIOR A 70€ SERAN REPARADOS SIN AVISO AL CLIENTE. LOS PRESUPUESTOS DE EQUIPOS QUE TENGAN REPARACION PERO NO SEAN ACEPTADOS TENDRAN UN COSTE DE 10€ EN CONCEPTO DE GESTION. El usuario tiene derecho a presupuesto previo escrito de las reparaciones o servicios que solicite y se obliga a su abono, solo cuando habiéndolo solicitado, no fuera aceptado. La firma del presupuesto implica su conformidad. Y el abono y retirada del equipo implica que se entrega en perfecto estado. Todas las reparaciones tienen 3 meses de garantía salvo las cubiertas por la garantía del fabricante, que serán de 6 meses, según la ley 23/03 de 10/07/2003. Este resguardo será imprescindible para la recogida del aparato reparado. En caso de pérdida el usuario deberá identificarse a criterio del Servicio de Asistencia Técnica (SAT). Toda reparación se abona en el instante de recoger el equipo. La actuación del SAT implica el estado de PERDIDA DE GARANTIA del equipo frente al fabricante y el SAT actúa bajo responsabilidad y en nombre del usuario. Para usar la garantía o presentar cualquier reclamación debe presentarse la factura de compra u hoja de depósito .La responsabilidad de disponer de copias de seguridad previas de los datos contenidos en el equipo es del usuario. No se responde por la pérdida de datos. La responsabilidad sobre el software incluido en el equipo es de su propietario y este reconoce que no han sido instalados por el SAT. El SAT solo instala software libre u original y no instala ningún software sin licencia. La no recogida del aparato reparado en 30 días desde la citación implicará el abono de 2 € diarios por gastos de almacenamiento. A los 6 meses, sin recogerse y/o abonarse, se considerará abandono y se desechará en un punto limpio, sin perjuicio, de las posibles reclamaciones legales por impago. El usuario se da por enterado y acepta que el SAT instale en el equipo un agente de monitorización que permita hacer seguimiento de incidencias en su equipo de seguridad, así como la posibilidad de activar servicios de SAT Remoto, Backup, Antivirus y protección de navegación web. Estos servicios podrán ser objeto de promociones y/o en su caso de cobro a las tarifas vigentes en el comercio por cada servicio. En cumplimiento de la LEY ORGÁNICA 3/2018 de Protección de Datos y del Reglamento (UE) 2016/679 le informamos que sus datos pasarán a formar parte la bbdd titularidad de la empresa del encabezado, en la dirección indicada, cuya finalidad exclusiva es la derivada de la actividad dirigida a la prestación de servicios de venta, reparación, mantenimiento, y provisión de material informático, y envío de información comercial, así como la gestión administrativa correspondiente necesaria y/o derivada de tales actividades, necesarias para y/o derivada de la prestación de servicios. La legitimación esta basada en el consentimiento del interesado, y la derivada de la prestación del servicio. El interesado podrá ejercer los derechos de acceso, rectificación, cancelación, oposición, portabilidad (si procede) y limitación de uso, expresamente reconocidos en el citado Reglamento, mediante escrito, acompañado de fotocopia de DNI, dirigido a la dirección anteriormente citada. Para mas información, puede solicitar información adicional, detallada en el plan de seguridad de la empresa.<br/>
-                            <input type="checkbox">
-                            Deseo recibir comunicaciones comerciales y publicitarias, de la empresa.<br/>
-                            <input type="checkbox">Acepta la instalación del agente de monitorización en su equipo.
-                        </div>
-                        <div style="text-align:right;">
-                            <h1 style="margin-bottom: 0px; margin-top: 0px;">R148 - ADOLFO FERNANDEZ</h1>
-                        </div>
-                    </div>
-                </div>
-                <script>
-                    parent.scrollTo(0, 0);
-                    function imprime_etiquetas() {
-                        window.open('etiquetas.php?id_deposito=148&nombre_cliente=ADOLFO+FERNANDEZ&num_etiquetas=' + prompt('Introduce el número de etiquetas a imprimir', 3) + '&num_blancas=' + prompt('Introduce el número de etiquetas vacías (para evitar imprimir en las etiquetas ya utilizadas)', 0), "PrintWindow", "width=1280,height=720,top=100,left=100,toolbars=no,scrollbars=no,status=no,resizable=no");
-                    }
-                    function imprime_etiquetas_62mm() {
-                        window.open('etiquetas_62mm.php?id_deposito=148&nombre_cliente=ADOLFO+FERNANDEZ&movil=620509901&objeto=TORRE+CL%C3%93NICA%0D%0A%2B+4+MODULO+MEMORIAS&problema=DA+FALLOS+AL+INICIAR+ALEATORIAMENTE%0D%0A%0D%0A&fecha=05%2F10%2F2021&num_etiquetas=' + prompt('Introduce el número de etiquetas a imprimir', 1), "PrintWindow", "width=1280,height=720,top=100,left=100,toolbars=no,scrollbars=no,status=no,resizable=no");
-                    }
-                </script>
+            </div>
         </div>
-    </body>
-    <script type="text/javascript">
-        window.seamless.connect();
-        parent.scrollTo(0, 0);
-    </script>
+        
+    </div>
+    <div class="resguardo">
+        <h2>RESGUARDO DE DEPÓSITO</h2>
+        <div class="info">
+            <div class="row">
+                <div class="col">F. RECEPCIÓN</div>
+                <div class="col right" id="f_recepcion"></div>
+                <div class="col">Nº DEPÓSITO</div>
+                <div class="col right" id="n_deposito"></div>
+            </div>
+            <div class="row">
+                <div class="col">NOMBRE</div>
+                <div class="col right" id="nombre"></div>
+                <div class="col">CONTACTO</div>
+                <div class="col right" id="contacto"></div>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Productos depositados:</h3>
+            <p id="producto"></p>
+        </div>
+        <div class="section">
+            <h3>Anomalías observadas o trabajos a realizar</h3>
+            <p id="problema"></p>
+        </div>
+        <div class="section">
+            <h3>Diagnósticos o trabajos realizados</h3>
+            <p id="solucion"></p>
+        </div>
+        <div class="footer">
+            <p>No está en garantía.</p>
+            
+        </div>
+        <div class="conditions">
+            <p>El depositante acepta las condiciones de este depósito, detalladas en el pie de página.</p>
+        </div>
+        <div class="signatures">
+             
+            <div class="signature">
+                <p>Firma cliente</p>
+              
+            </div>
+            <div class="signature">
+                <p>Firma técnico</p>
+            </div>
+            <div class="signature">
+                <p>Retira conforme. Firma cliente</p>
+            </div>
+        </div>
+    </div>
+    <div id="piedepagina">
+        TODA REPARACION INFERIOR A 30€ SE REALIZARA SIN AVISO AL CLIENTE. TODOS LOS EQUIPOS APPLE CON REPARACION INFERIOR A 70€ SERAN REPARADOS SIN AVISO AL CLIENTE. LOS PRESUPUESTOS DE EQUIPOS QUE TENGAN REPARACION PERO NO SEAN ACEPTADOS TENDRAN UN COSTE DE 10€ EN CONCEPTO DE GESTION. El usuario tiene derecho a presupuesto previo escrito de las reparaciones o servicios que solicite y se obliga a su abono, solo cuando habiéndolo solicitado, no fuera aceptado. La firma del presupuesto implica su conformidad. Y el abono y retirada del equipo implica que se entrega en perfecto estado. Todas las reparaciones tienen 3 meses de garantía salvo las cubiertas por la garantía del fabricante, que serán de 6 meses, según la ley 23/03 de 10/07/2003. Este resguardo será imprescindible para la recogida del aparato reparado. En caso de pérdida el usuario deberá identificarse a criterio del Servicio de Asistencia Técnica (SAT). Toda reparación se abona en el instante de recoger el equipo. La actuación del SAT implica el estado de PERDIDA DE GARANTIA del equipo frente al fabricante y el SAT actúa bajo responsabilidad y en nombre del usuario. Para usar la garantía o presentar cualquier reclamación debe presentarse la factura de compra u hoja de depósito .La responsabilidad de disponer de copias de seguridad previas de los datos contenidos en el equipo es del usuario. No se responde por la pérdida de datos. La responsabilidad sobre el software incluido en el equipo es de su propietario y este reconoce que no han sido instalados por el SAT. El SAT solo instala software libre u original y no instala ningún software sin licencia. La no recogida del aparato reparado en 30 días desde la citación implicará el abono de 2 € diarios por gastos de almacenamiento. A los 6 meses, sin recogerse y/o abonarse, se considerará abandono y se desechará en un punto limpio, sin perjuicio, de las posibles reclamaciones legales por impago. El usuario se da por enterado y acepta que el SAT instale en el equipo un agente de monitorización que permita hacer seguimiento de incidencias en su equipo de seguridad, así como la posibilidad de activar servicios de SAT Remoto, Backup, Antivirus y protección de navegación web. Estos servicios podrán ser objeto de promociones y/o en su caso de cobro a las tarifas vigentes en el comercio por cada servicio. En cumplimiento de la LEY ORGÁNICA 3/2018 de Protección de Datos y del Reglamento (UE) 2016/679 le informamos que sus datos pasarán a formar parte la bbdd titularidad de la empresa del encabezado, en la dirección indicada, cuya finalidad exclusiva es la derivada de la actividad dirigida a la prestación de servicios de venta, reparación, mantenimiento, y provisión de material informático, y envío de información comercial, así como la gestión administrativa correspondiente necesaria y/o derivada de tales actividades, necesarias para y/o derivada de la prestación de servicios. La legitimación esta basada en el consentimiento del interesado, y la derivada de la prestación del servicio. El interesado podrá ejercer los derechos de acceso, rectificación, cancelación, oposición, portabilidad (si procede) y limitación de uso, expresamente reconocidos en el citado Reglamento, mediante escrito, acompañado de fotocopia de DNI, dirigido a la dirección anteriormente citada. Para mas información, puede solicitar información adicional, detallada en el plan de seguridad de la empresa.<br/>
+        <input type="checkbox">
+        Deseo recibir comunicaciones comerciales y publicitarias, de la empresa.<br/>
+        <input type="checkbox">Acepta la instalación del agente de monitorización en su equipo.
+    </div>
+
+    </div>
+<script src="script/imprimir.js"></script>
+</body>
 </html>

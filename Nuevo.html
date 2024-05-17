@@ -153,9 +153,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var dia=fecha.getDate();
     var mes=fecha.getMonth()+1; // Add 1 to get the correct month
     var año=fecha.getFullYear();
-    var hora=fecha.getHours();
-    var minutos=fecha.getMinutes();
-    var fechaactual=año+"-"+mes+"-"+dia+" "+hora+":"+minutos;
+   
+    var fechaactual=año+"-"+mes+"-"+dia;
     var Ifecha=document.getElementById("fecha");
     Ifecha.value=fechaactual;
 });
