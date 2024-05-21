@@ -1,0 +1,18 @@
+.button {
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color:#2196f3 ;
+   margin-left: 30px;
+   color: white;
+   border-color: transparent;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #0b7dda;
+}
+@media print {
+    .button {
+        display: none;
+    }
+}

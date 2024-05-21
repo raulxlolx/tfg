@@ -24,11 +24,13 @@
         var cliente = data;
         console.log(data);
         var name = document.getElementById("name");
-        var id = document.getElementById("idc").value=cliente.id;
-        var codigo_barras = document.getElementById("codigo_barras").value=cliente.codigo_barras;
+        name.value=cliente.nombre;
+        var id = document.getElementById("idc")
+        id.value=cliente.id;
+        var codigo_barras = document.getElementById("codigo_barras")
+        codigo_barras.value=cliente.codigo_barras;
         var id2 = document.getElementById("id");
         id2.innerHTML = cliente.id;
-        name.value = cliente.nombre;
         email.value = cliente.email;
         phone.value = cliente.telefono;
         dni.value = cliente.dni;
@@ -77,5 +79,10 @@
 function mandarimprimir(){
 
     var url = "imprimir.html?id=" + encodeURIComponent(id) + "&codigoDeBarras=" + encodeURIComponent(codbarras);
+    window.open(url);
+}
+function mandarimprimirCod(){
+    var name = document.getElementById("name").value;
+    var url = "imprimircod.html?codigoDeBarras=" + encodeURIComponent(codbarras) + "&name=" + encodeURIComponent(name);
     window.open(url);
 }
