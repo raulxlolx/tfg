@@ -23,7 +23,7 @@
                 </a>
             </li>
             <li class="has-subnav">
-                <a href="grafica.html">
+                <a href="informes.html">
                     <i class="fa fa-globe fa-2x"></i>
                     <span class="nav-text">Informes</span>
                 </a>

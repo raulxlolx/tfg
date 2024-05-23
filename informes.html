@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfica de Líneas con Chart.js</title>
+    <!-- Incluye Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Incluye el adaptador de fechas para Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <style>
+        #chartContainer {
+            height: 85%;
+            width: 85%;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+        <div id="chartContainer">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+    <script>
+        async function fetchData() {
+            const response = await fetch('Bd/informe.php');
+            const data = await response.json();
+            console.log(data);
+            return data;
+        }
+
+        function prepareChartData(data) {
+    // Obtén el mes y año actual
+    const currentMonth = new Date().getMonth();
+    const currentYear = new Date().getFullYear();
+
+    // Crear un objeto para contar las entradas y salidas por día
+    const counts = data.reduce((acc, item) => {
+        const entradaMonth = new Date(item.fecha_entrada).getMonth();
+        const entradaYear = new Date(item.fecha_entrada).getFullYear();
+        const entradaDate = new Date(item.fecha_entrada).getDate();
+
+        if (entradaMonth === currentMonth && entradaYear === currentYear) {
+            if (!acc[entradaDate]) {
+                acc[entradaDate] = { entradas: 0, salidas: 0 };
+            }
+            acc[entradaDate].entradas++;
+        }
+
+        if (item.fecha_retirada !== '0000-00-00 00:00:00') {
+            const retiradaMonth = new Date(item.fecha_retirada).getMonth();
+            const retiradaYear = new Date(item.fecha_retirada).getFullYear();
+            const retiradaDate = new Date(item.fecha_retirada).getDate();
+
+            if (retiradaMonth === currentMonth && retiradaYear === currentYear) {
+                if (!acc[retiradaDate]) {
+                    acc[retiradaDate] = { entradas: 0, salidas: 0 };
+                }
+                acc[retiradaDate].salidas++;
+            }
+        }
+
+        return acc;
+    }, {});
+
+    const labels = Object.keys(counts).map(day => new Date(currentYear, currentMonth, day));
+    const entradaData = Object.values(counts).map(count => count.entradas);
+    const salidaData = Object.values(counts).map(count => count.salidas);
+
+    return {
+        labels: labels,
+        datasets: [
+            {
+                label: 'Entradas',
+                data: entradaData,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderWidth: 1
+            },
+            {
+                label: 'Salidas',
+                data: salidaData,
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderWidth: 1
+            }
+        ]
+    };
+}
+        async function createChart() {
+            const data = await fetchData();
+            const chartData = prepareChartData(data);
+
+            const ctx = document.getElementById('myChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: chartData,
+                options: {
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'month',
+                                tooltipFormat: 'PP'
+                            },
+                            title: {
+                                display: true,
+                                text: 'Fecha'
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                callback: function(value, index, values) {
+                                   
+                                    return value;
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tipo'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        createChart();
+    </script>
+</body>
+</html>
