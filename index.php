@@ -8,38 +8,22 @@
     <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
-    <header>
+<div class="sidebar">
+        <div class="sidebar-title">Menu</div>
+        <a href="#deposito" class="sidebar-link">Deposito</a>
+        <a href="informes.html" class="sidebar-link">Informes</a>
+        <a href="opciones.html" class="sidebar-link">Opciones</a>
+    </div>
+
+    <div class="main-content">
+        <!-- Existing content of the page -->
         <h1>Gestion Taller Dynos</h1>
-        <a href="Nuevo.html" class="button">Nuevo deposito</a>
-    </header>
+        <p><a href="Nuevo.html">Nuevo deposito</a></p>
+        <form method="GET" action="">
+            <input type="text" id="search" name="barcode" placeholder="buscar">
+        </form>
+            </form>
 
-    <div class="area"></div>
-    <nav class="main-menu">
-        <ul>
-            <li>
-                <a href="index.php">
-                    <i class="fa fa-home fa-2x"></i>
-                    <span class="nav-text">Depositos</span>
-                </a>
-            </li>
-            <li class="has-subnav">
-                <a href="informes.html">
-                    <i class="fa fa-globe fa-2x"></i>
-                    <span class="nav-text">Informes</span>
-                </a>
-            </li>
-            <li>
-                <a href="opciones.html">
-                    <i class="fa fa-cogs fa-2x"></i>
-                    <span class="nav-text">Ajustes</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <!-- aqui ira la tabla de donde se imprimen los datos del php -->
-        <div class="table-container">
             <?php 
             require 'Bd/conn.php';
 
@@ -58,6 +42,14 @@
             $sql = "SELECT clientes.id, clientes.nombre, depositos.fecha_entrada, depositos.datos_deposita, depositos.estado, depositos.codigo_barras
                         FROM clientes 
                         INNER JOIN depositos ON clientes.id = depositos.id_cliente";
+
+            if(isset($_GET['barcode'])) {
+                $barcode = $_GET['barcode'];
+                if(isset($_GET['barcode'])) {
+                    $barcode = $_GET['barcode'];
+                    $sql .= " WHERE depositos.codigo_barras LIKE '%$barcode%'";                }
+            }
+
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -72,6 +64,7 @@
             }
             $conn->close();
             ?>
+
         </div>
     </div>
 </body>

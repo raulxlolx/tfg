@@ -2,7 +2,7 @@
             // Obtener la fecha actual
             var fecha = new Date();
             var año = fecha.getFullYear();
-            var mes = fecha.getMonth();
+            var mes = fecha.getMonth()+1;
 
             // Generar el resto con número autoincremental
             var numero = Math.floor(Math.random() * 100000) + 1;

@@ -11,49 +11,22 @@
 </head>
 
 <body>
+    <div class="sidebar">
+        <div class="sidebar-title">Menu</div>
+        <a href="index.php" class="sidebar-link">Deposito</a>
+        <a href="informes.html" class="sidebar-link">Informes</a>
+        <a href="opciones.html" class="sidebar-link">Opciones</a>
+    </div>
 
-    <header>
-       
+    <div class="main-content">
+        <!-- Existing content of the page -->
         <h1>Gestion Taller Dynos</h1>
         <button onclick="mandarimprimir()"  class="button">Imprimir</button>
         <button onclick="mandarimprimirCod()"  class="button">Imprimir Codigo de Barras</button>
-    </header>
+  
 
-
-    <h1 class="deposito">Deposito <span id="id" name="id"> </span></h1>
-    <div class="area">
-        <nav class="main-menu">
-            <ul>
-                <li>
-                    <a href="index.php">
-                        <i class="fa fa-home
-                        fa-2x"></i>
-                        <span class="nav-text">
-                            Depositos
-                        </span>
-                    </a>
-                </li>
-                <li class="has-subnav
-                ">
-                    <a href="grafica.html">
-                        <i class="fa fa-globe fa-2x"></i>
-                        <span class="nav-text">
-                            Informes
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="opciones.html">
-                        <i class="fa fa-cogs
-                        fa-2x"></i>
-                        <span class="nav-text">
-                            Ajustes
-                        </span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+        <h1 class="deposito">Deposito <span id="id" name="id"> </span></h1>
+    
 
 
         <div class="container">
@@ -184,7 +157,7 @@
       
         <h2>Albaran</h2>
         <!-- ... el resto de tu código HTML ... -->
-        <form action="" class="albaran" id="">
+        <form action="" class="albaran" id="albaran">
             <table>
                 <thead>
                     <tr>
@@ -246,11 +219,14 @@
             <div>
                 <label for="total">Total:</label>
                 <input type="text" id="total" name="total" readonly>
+               
             </div>
         </form>
+        <button class="button" onclick="actualizarbd()">Actaulizar</button>
     </div>
 </div>
-<button class="button" onclick="actualizarbd()">Actaulizar</button>
+</div>
+
     </div>
     
     </div>
