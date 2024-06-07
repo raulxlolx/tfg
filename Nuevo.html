@@ -57,7 +57,15 @@
       
         <textarea name="Objeto" id="Objeto" style="width: 100%;" rows="3"></textarea>
         
-        <div id="botones"></div>
+        <div id="botones">
+            <button type="button" class="button" onclick="deposito('PORTATIL')">PORTATIL</button>
+            <button type="button" class="button" onclick="deposito('TORRE')">TORRE</button>
+            <button type="button"  class="button"onclick="deposito('IMPRESORA')">IMPRESORA</button>
+            <button type="button"  class="button"onclick="deposito('CONSOLA')">CONSOLA</button>
+            <button type="button"  class="button"onclick="deposito('MONITOR')">MONITOR</button>
+            <button type="button" class="button" onclick="deposito('TELEFONO')">TELEFONO</button>
+            
+        </div>
        
        
 
@@ -118,6 +126,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var dia=fecha.getDate();
     var mes=fecha.getMonth()+1; // Add 1 to get the correct month
     var año=fecha.getFullYear();
+    var hora=fecha.getHours();
+    var minutos=fecha.getMinutes();
+    
    
     var fechaactual=año+"-"+mes+"-"+dia;
     var Ifecha=document.getElementById("fecha");

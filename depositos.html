@@ -171,37 +171,38 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="text" class="descripcion" name="descripcion"></td>
-                        <td><input type="text" class="num_serie" name="num_serie"></td>
-                        <td><input type="text" class="precio" name="precio"></td>
-                        <td><input type="text" class="precio_iva" name="precio_iva" readonly></td>
-                        <td><input type="text" class="cantidad" name="cantidad"></td>
-                        <td><input type="text" class="importe" name="importe" readonly></td>
+                        <td><input type="text" class="descripcion" name="descripcion" id="descripcion"></td>
+                        <td><input type="text" class="num_serie" name="num_serie" id="num_serie"></td>
+                        <td><input type="text" class="precio" name="precio" id="precio"></td>
+                        <td><input type="text" class="precio_iva" name="precio_iva" id="precio_iva" readonly></td>
+                        <td><input type="text" class="cantidad" name="cantidad" id="cantidad" ></td>
+                        <td><input type="text" class="importe" name="importe" id="importe" readonly></td>
                     </tr>
                     <tr>
-                        <td><input type="text" class="descripcion" name="descripcion"></td>
-                        <td><input type="text" class="num_serie" name="num_serie"></td>
-                        <td><input type="text" class="precio" name="precio"></td>
-                        <td><input type="text" class="precio_iva" name="precio_iva" readonly></td>
-                        <td><input type="text" class="cantidad" name="cantidad"></td>
-                        <td><input type="text" class="importe" name="importe" readonly></td>
+                        <td><input type="text" class="descripcion" name="descripcion" id="descripcion"></td>
+                        <td><input type="text" class="num_serie" name="num_serie" id="num_serie"></td>
+                        <td><input type="text" class="precio" name="precio" id="precio"></td>
+                        <td><input type="text" class="precio_iva" name="precio_iva" id="precio_iva" readonly></td>
+                        <td><input type="text" class="cantidad" name="cantidad" id="cantidad" ></td>
+                        <td><input type="text" class="importe" name="importe" id="importe" readonly></td>
                     </tr>
                     <tr>
-                        <td><input type="text" class="descripcion" name="descripcion"></td>
-                        <td><input type="text" class="num_serie" name="num_serie"></td>
-                        <td><input type="text" class="precio" name="precio"></td>
-                        <td><input type="text" class="precio_iva" name="precio_iva" readonly></td>
-                        <td><input type="text" class="cantidad" name="cantidad"></td>
-                        <td><input type="text" class="importe" name="importe" readonly></td>
+                        <td><input type="text" class="descripcion" name="descripcion" id="descripcion"></td>
+                        <td><input type="text" class="num_serie" name="num_serie" id="num_serie"></td>
+                        <td><input type="text" class="precio" name="precio" id="precio"></td>
+                        <td><input type="text" class="precio_iva" name="precio_iva" id="precio_iva" readonly></td>
+                        <td><input type="text" class="cantidad" name="cantidad" id="cantidad" ></td>
+                        <td><input type="text" class="importe" name="importe" id="importe" readonly></td>
                     </tr>
                     <tr>
-                        <td><input type="text" class="descripcion" name="descripcion"></td>
-                        <td><input type="text" class="num_serie" name="num_serie"></td>
-                        <td><input type="text" class="precio" name="precio"></td>
-                        <td><input type="text" class="precio_iva" name="precio_iva" readonly></td>
-                        <td><input type="text" class="cantidad" name="cantidad"></td>
-                        <td><input type="text" class="importe" name="importe" readonly></td>
+                        <td><input type="text" class="descripcion" name="descripcion" id="descripcion"></td>
+                        <td><input type="text" class="num_serie" name="num_serie" id="num_serie"></td>
+                        <td><input type="text" class="precio" name="precio" id="precio"></td>
+                        <td><input type="text" class="precio_iva" name="precio_iva" id="precio_iva" readonly></td>
+                        <td><input type="text" class="cantidad" name="cantidad" id="cantidad" ></td>
+                        <td><input type="text" class="importe" name="importe" id="importe" readonly></td>
                     </tr>
+         
                     <!-- Puedes agregar más filas aquí si es necesario -->
                 </tbody>
             </table>
@@ -276,7 +277,7 @@
             //poner estado en terminado pendiente de recojida y el estado en olucionado
 
             var estado = document.getElementById("estado");
-            estado.value = 3;//coresponde a terminado pendiente de recojida
+            estado.value = 9;//coresponde a terminado pendiente de recojida
 
             var resultado = document.getElementById("Resultado");
             resultado.value = 3;//corresponde a diagnosticado
@@ -284,6 +285,17 @@
             ponerfecha();
 
         }
+        function Retirar() {
+            //poner estado en terminado pendiente de recojida y el estado en olucionado
+
+            var estado = document.getElementById("estado");
+            estado.value = 9;//coresponde a terminado pendiente de recojida
+
+            var resultado = document.getElementById("Resultado");
+            resultado.value = 3;//corresponde a diagnosticado
+
+            ponerfecha();
+        }   
         function TerminadoNoSolu() {
             //poner estado en terminado pendiente de recojida y el estado en olucionado
 

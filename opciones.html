@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Marcas</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/opciones.css">
+</head>
+<body>
+    
+<body>
+    <div class="sidebar">
+        <div class="sidebar-title">Menu</div>
+        <a href="index.php" class="sidebar-link">Deposito</a>
+        <a href="informes.html" class="sidebar-link">Informes</a>
+        <a href="opciones.html" class="sidebar-link">Opciones</a>
+    </div>
+
+    <div class="main-content">
+    <h1>Administrar Marcas</h1>
+    <div>
+        <label for="producto">Producto:</label>
+        <select id="producto" onchange="cargarMarcas()">
+            <option value="PORTATIL">Portátil</option>
+            <option value="TORRE">Torre</option>
+            <option value="CONSOLA">consola</option>
+            <option value="MONITOR">Monitor</option>
+            <option value="TELEFONO">Telefono</option>
+            
+        </select>
+    </div>
+    <div>
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca">
+        <button onclick="agregarMarca()">Agregar Marca</button>
+    </div>
+    <div>
+        <h2>Marcas Existentes</h2>
+        <ul id="lista-marcas"></ul>
+    </div>
+ <script src="script/opciones.js"></script>
+</body>
+</html>

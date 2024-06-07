@@ -73,34 +73,31 @@
                 console.error('Error:', error);
             });
           
-        window.location.href = "index.php";
+        // window.location.href = "index.php";
+        actualizaralbaran();
     }
+function actualizaralbaran() { 
+    var form = document.getElementById("albaran");
+    var formData = new FormData(form);
+    formData.append("codigo_barras", codbarras); // Agrega el código de barras al formData
 
-    function actualizaralbaran() { 
-
-        var form = document.getElementById("albaran");
-        var formData = new FormData(form);
-        fetch('Bd/editarAlbaran.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Hubo un problema al enviar los datos.');
-            }
-            return response.text();
-        })
-        .then(data => {
-            console.log(data); // Puedes hacer algo con la respuesta del servidor aquí
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-
-
-
-
-     }
+    fetch('Bd/Albaran.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Hubo un problema al enviar los datos.');
+        }
+        return response.text();
+    })
+    .then(data => {
+        console.log(data); // Puedes hacer algo con la respuesta del servidor aquí
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
 
 
     
